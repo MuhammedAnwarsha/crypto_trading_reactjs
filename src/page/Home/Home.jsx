@@ -133,7 +133,7 @@ const Home = () => {
             <div className="h-[12%] border-t">
               <Input
                 className="w-full h-full border-none outline-none shadow-md"
-                placeholder="write promt..."
+                placeholder="write prompt..."
                 onChange={handleChange}
                 value={inputValue}
                 onKeyPress={handleKeyPress}
