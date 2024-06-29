@@ -55,7 +55,7 @@ const TransferForm = () => {
       </div>
 
       <DialogClose className="w-full">
-        <Button onClick={handleSubmit} className="w-full py-7">
+        <Button onClick={handleSubmit} className="w-full py-7 text-xl">
           TRANSFER
         </Button>
       </DialogClose>
