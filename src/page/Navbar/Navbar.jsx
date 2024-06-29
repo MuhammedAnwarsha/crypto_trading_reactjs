@@ -13,8 +13,11 @@ import {
 } from "@radix-ui/react-icons";
 import React from "react";
 import Sidebar from "./Sidebar";
+import { useNavigate } from "react-router-dom";
 
 const Navbar = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="px-2 py-3 border-b z-50 bg-background bg-opacity-0 sticky top-0 left-0 right-0 flex justify-between items-center shadow-lg">
       <div className="flex items-center gap-3">
@@ -49,7 +52,10 @@ const Navbar = () => {
           </SheetContent>
         </Sheet>
 
-        <p className="text-sm font-bold lg:text-base cursor-pointer">
+        <p
+          onClick={() => navigate("/")}
+          className="text-sm font-bold lg:text-base cursor-pointer"
+        >
           CRYPTO TRADING
         </p>
         <div className="p-0 ml-9">
