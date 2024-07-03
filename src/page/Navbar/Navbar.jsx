@@ -14,12 +14,14 @@ import {
 import React from "react";
 import Sidebar from "./Sidebar";
 import { useNavigate } from "react-router-dom";
+import { useSelector } from "react-redux";
 
 const Navbar = () => {
   const navigate = useNavigate();
+  const { auth } = useSelector((store) => store);
 
   return (
-    <div className="px-2 py-3 border-b z-50 bg-background bg-opacity-0 sticky top-0 left-0 right-0 flex justify-between items-center shadow-lg">
+    <div className="px-1 py-3 border-b z-50 bg-background bg-opacity-0 sticky top-0 left-0 right-0 flex gap-2 justify-between items-center shadow-lg">
       <div className="flex items-center gap-3">
         <Sheet>
           <SheetTrigger>
@@ -65,10 +67,11 @@ const Navbar = () => {
           </Button>
         </div>
       </div>
-      <div>
-        <Avatar>
-          <AvatarFallback>A</AvatarFallback>
-        </Avatar>
+      <div className="shadow-md p-2">
+        {/* <Avatar>
+          <AvatarFallback>{auth.user?.fullName[0].toUpperCase()}</AvatarFallback>
+        </Avatar> */}
+        <h3 className="font-bold">{auth.user?.fullName.substring(0, 5)}</h3>
       </div>
     </div>
   );
